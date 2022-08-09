@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" path1tent=
+        "width=device-width, initial-scale=1.0">
+  
+    <script src="https://d3js.org/d3.v4.min.js">
+    </script>
+  
+    <title>
+        D3.js d3.nest() Function
+    </title>
+</head>
+  
+<body>
+    <script>
+        var cars = [
+            { name: "car1", manufactured: "1950", model: "s51" },
+            { name: "car1", manufactured: "1950", model: "s51" },
+            { name: "car1", manufactured: "1951", model: "s50" },
+            { name: "car1", manufactured: "1951", model: "s50" },
+        ];
+
+        var champs = [
+          {name: "Ashe",gender: "Female",role:"ADC"},
+          {name: "Fiora",gender: "Female",role:"Top"},
+          {name: "Vex",gender: "Female",role:"Mid"},
+          {name: "Maokai",gender: "Male",role:"Jungle"},
+          {name: "Darius",gender: "Male",role:"Top"},
+          {name: "Pyke",gender: "Male",role:"Support"},
+        ]
+        var groupedData = d3.nest()
+            .key(function (d) { return d.manufactured; })
+            .entries(cars);
+        // console.log("ArrayData :", groupedData);
+        // console.log("ArrayData[0] :", groupedData[0]);
+        // console.log("ArrayData[1] :", groupedData[1]);
+
+        console.log(champs); 
+        var champs = d3.nest()
+          .key(function (d) {return d.gender; })
+          .entries(champs); 
+
+        console.log(champs);
+
+        console.log(d3.keys(champs));
+    </script>
+</body>
+  
+</html>
